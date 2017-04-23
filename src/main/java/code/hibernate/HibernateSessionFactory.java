@@ -1,6 +1,7 @@
-package code;
+package code.hibernate;
 
 import org.hibernate.HibernateException;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -20,7 +21,7 @@ public class HibernateSessionFactory {
         }
     }
 
-    public static SessionFactory getSessionFactory() throws HibernateException {
-        return ourSessionFactory;
+    public static Session getSession() throws HibernateException {
+        return ourSessionFactory.openSession();
     }
 }
