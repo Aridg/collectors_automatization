@@ -4,12 +4,23 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.url"/>
-        <property name="connection.driver_class"/>
-        <!-- <property name="connection.username"/> -->
-        <!-- <property name="connection.password"/> -->
+        <property name="connection.driver_class">org.sqlite.JDBC</property>
+        <property name="hibernate.dialect">code.hibernate.SQLiteDialect</property>
+        <property name="show_sql">false</property>
+        <property name="connection.url">jdbc:sqlite:D:/Dropbox/data base/DataBase.db</property>
+        <mapping class="code.hibernate.StatusesEntity"/>
+        <mapping class="code.hibernate.HouseMaterialsEntity"/>
+        <mapping class="code.hibernate.ManagementCompaniesEntity"/>
+        <mapping class="code.hibernate.MicroDistrictsEntity"/>
+        <mapping class="code.hibernate.RiserTypesEntity"/>
+        <mapping class="code.hibernate.RoofingTypesEntity"/>
+        <mapping class="code.hibernate.TicketsEntity"/>
+        <mapping class="code.hibernate.TicketsCommentsEntity"/>
+        <mapping class="code.hibernate.TicketsVEntity"/>
+        <!-- <propenamename="connection.username"/> -->
+        <!-- <propenamename="connection.password"/> -->
 
         <!-- DB schema will be updated if needed -->
-        <!-- <property name="hbm2ddl.auto">update</property> -->
+        <!-- <propenamename="hbm2ddl.auto">update</property> -->
     </session-factory>
 </hibernate-configuration>

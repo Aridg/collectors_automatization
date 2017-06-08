@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="564.0" prefWidth="1039.0" styleClass="background" stylesheets="@../../css/styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.gui.controllers.directories.RiserMaterialDirectoryController">
+   <children>
+      <Button layoutX="913.0" layoutY="469.0" mnemonicParsing="false" onAction="#onAddClick" prefHeight="40.0" prefWidth="40.0" styleClass="add" stylesheets="@../../css/styles.css">
+         <graphic>
+            <ImageView fitHeight="37.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../icons/1492989694_add.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="973.0" layoutY="469.0" mnemonicParsing="false" onAction="#onDelClick" prefHeight="40.0" prefWidth="40.0" styleClass="add" stylesheets="@../../css/styles.css">
+         <graphic>
+            <ImageView fitHeight="37.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../icons/1493070992_sub.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TableView fx:id="table" layoutX="3.0" prefHeight="450.0" prefWidth="1026.0" style="-fx-border-color: dimgrey;">
+        <columns>
+          <TableColumn fx:id="name" prefWidth="1021.9999885559082" text="Материал стояка" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

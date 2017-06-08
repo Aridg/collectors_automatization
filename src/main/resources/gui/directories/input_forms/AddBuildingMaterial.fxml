@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="299.0" prefWidth="458.0" styleClass="background" stylesheets="@../../../css/styles.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.gui.controllers.directories.input_forms.AddBuildingMaterialController">
+   <children>
+      <Label layoutX="74.0" layoutY="29.0" text="Задайте название нового материала дома">
+         <font>
+            <Font name="Segoe UI" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="74.0" layoutY="130.0" text="Материал :" />
+      <TextField fx:id="name" layoutX="176.0" layoutY="126.0" />
+      <Button layoutX="303.0" layoutY="246.0" mnemonicParsing="false" onAction="#onAddClick" prefHeight="31.0" prefWidth="129.0" stylesheets="@../../../css/styles.css" text=" Добавить    " textFill="WHITE">
+         <styleClass>
+            <String fx:value="column" />
+            <String fx:value="menu_item" />
+         </styleClass>
+      </Button>
+   </children>
+</AnchorPane>

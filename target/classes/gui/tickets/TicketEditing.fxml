@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="399.0" prefWidth="1061.0" styleClass="background" stylesheets="@../../css/styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.gui.controllers.tickets.TicketEditingController">
+   <children>
+      <ComboBox fx:id="microDistrict" layoutX="199.0" layoutY="70.0" prefWidth="150.0" />
+      <TextField fx:id="flat" layoutX="372.0" layoutY="140.0" />
+      <TextField fx:id="riserCount" layoutX="897.0" layoutY="140.0" />
+      <TextField fx:id="flexField2" layoutX="372.0" layoutY="210.0" />
+      <TextField fx:id="street" layoutX="24.0" layoutY="140.0" />
+      <TextField fx:id="house" layoutX="199.0" layoutY="140.0" />
+      <ComboBox fx:id="houseMaterial" layoutX="372.0" layoutY="70.0" prefWidth="150.0" />
+      <ComboBox fx:id="status" layoutX="24.0" layoutY="70.0" prefWidth="150.0" />
+      <ComboBox fx:id="riserType" layoutX="897.0" layoutY="70.0" prefWidth="150.0" />
+      <ComboBox fx:id="roofingType" layoutX="550.0" layoutY="70.0" prefWidth="150.0" />
+      <ComboBox fx:id="managementCompany" layoutX="722.0" layoutY="70.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="installer" layoutX="24.0" layoutY="210.0" />
+      <TextField fx:id="flexField3" layoutX="550.0" layoutY="210.0" />
+      <TextField fx:id="flexField4" layoutX="722.0" layoutY="210.0" />
+      <TextField fx:id="flexField5" layoutX="897.0" layoutY="210.0" />
+      <TextField fx:id="flexField1" layoutX="199.0" layoutY="210.0" />
+      <TextField fx:id="floor" layoutX="550.0" layoutY="140.0" />
+      <TextField fx:id="floorCount" layoutX="722.0" layoutY="140.0" />
+      <Label layoutX="81.0" layoutY="121.0" text="Улица" />
+      <Label layoutX="259.0" layoutY="121.0" text="Дом" />
+      <Label layoutX="417.0" layoutY="121.0" text="Квартира" />
+      <Label layoutX="611.0" layoutY="121.0" text="Этаж" />
+      <Label layoutX="767.0" layoutY="121.0" text="Этажность" />
+      <Label layoutX="916.0" layoutY="118.0" text="Количество стояков" />
+      <Label layoutX="66.0" layoutY="190.0" text="Монтажник" />
+      <Label layoutX="377.0" layoutY="190.0" text="Дополнительное поле 2" />
+      <Label layoutX="559.0" layoutY="190.0" text="Дополнительное поле 3" />
+      <Label layoutX="729.0" layoutY="190.0" text="Дополнительное поле 4" />
+      <Label layoutX="905.0" layoutY="190.0" text="Дополнительное поле 5" />
+      <Label layoutX="207.0" layoutY="190.0" text="Дополнительное поле 1" />
+      <Label layoutX="500.0" layoutY="11.0" prefHeight="20.0" prefWidth="124.0" text="Параметры заявки">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <ButtonBar layoutX="762.0" layoutY="345.0" prefHeight="40.0" prefWidth="286.0">
+        <buttons>
+            <Button mnemonicParsing="false" onAction="#onSaveClick" prefHeight="27.0" prefWidth="149.0" styleClass="button1" stylesheets="@../../css/styles.css" text="Сохранить" textFill="WHITE" />
+            <Button mnemonicParsing="false" onAction="#onExitClick" styleClass="button1" stylesheets="@../../css/styles.css" text="Выход" textFill="WHITE" />
+        </buttons>
+      </ButtonBar>
+      <Label layoutX="83.0" layoutY="51.0" text="Статус" />
+      <Label layoutX="240.0" layoutY="51.0" text="Микрорайон" />
+      <Label layoutX="407.0" layoutY="51.0" text="Материал дома" />
+      <Label layoutX="593.0" layoutY="51.0" text="Тип кровли" />
+      <Label layoutX="728.0" layoutY="51.0" text="Управляющая компания" />
+      <Label layoutX="922.0" layoutY="51.0" text="Материал стояка" />
+      <TextField fx:id="dept" layoutX="24.0" layoutY="280.0" promptText="Число вида 5.123" />
+      <Label layoutX="65.0" layoutY="263.0" text="Сумма долга" />
+      <Label layoutX="296.0" layoutY="263.0" text="Контакт 1" />
+      <Label layoutX="617.0" layoutY="263.0" text="Контакт 2" />
+      <Label layoutX="909.0" layoutY="263.0" text="Контакт 3" />
+      <TextField layoutX="230.0" layoutY="280.0" prefHeight="25.0" prefWidth="220.0" promptText="+77775556622 Иванов И.И." />
+      <TextField layoutX="529.0" layoutY="280.0" prefHeight="25.0" prefWidth="220.0" />
+      <TextField layoutX="826.0" layoutY="280.0" prefHeight="25.0" prefWidth="220.0" />
+   </children>
+</AnchorPane>
