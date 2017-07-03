@@ -20,9 +20,9 @@
             <Blend />
          </effect>
       </Separator>
-      <ComboBox fx:id="fieldCombo" layoutX="14.0" layoutY="9.0" prefHeight="25.0" prefWidth="177.0" promptText="Поле" />
-      <ComboBox fx:id="operationCombo" layoutX="14.0" layoutY="64.0" prefHeight="25.0" prefWidth="177.0" promptText="Сравнение" />
-      <TextField fx:id="filterValueCombo" layoutX="14.0" layoutY="122.0" prefHeight="25.0" prefWidth="177.0" promptText="Значение">
+      <ComboBox fx:id="fieldCombo" layoutX="14.0" layoutY="9.0" prefHeight="27.0" prefWidth="225.0" promptText="Поле" />
+      <ComboBox fx:id="operationCombo" layoutX="14.0" layoutY="50.0" prefHeight="27.0" prefWidth="225.0" promptText="Сравнение" />
+      <TextField fx:id="filterValueCombo" layoutX="14.0" layoutY="91.0" prefHeight="25.0" prefWidth="225.0" promptText="Значение">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
@@ -38,14 +38,13 @@
             <Blend />
          </effect>
       </Separator>
-      <TextArea fx:id="filterArea" editable="false" layoutX="200.0" layoutY="6.0" prefHeight="142.0" prefWidth="695.0" />
-      <Button layoutX="903.0" layoutY="9.0" mnemonicParsing="false" onAction="#onAndClick" prefHeight="27.0" prefWidth="110.0" styleClass="button1" stylesheets="@../../css/styles.css" text="И" textFill="WHITE">
+      <TextArea fx:id="filterArea" editable="false" layoutX="272.0" layoutY="9.0" prefHeight="158.0" prefWidth="525.0" />
+      <Button layoutX="13.0" layoutY="132.0" mnemonicParsing="false" onAction="#onAndParameterClick" prefHeight="27.0" prefWidth="225.0" styleClass="button1" stylesheets="@../../css/styles.css" text="Добавить параметр" textFill="WHITE">
          <font>
             <Font name="Segoe UI" size="12.0" />
          </font></Button>
-      <Button layoutX="903.0" layoutY="47.0" mnemonicParsing="false" onAction="#onOrClick" prefHeight="27.0" prefWidth="110.0" styleClass="button1" stylesheets="@../../css/styles.css" text="ИЛИ" textFill="WHITE" />
-      <Button fx:id="clearFilter" layoutX="903.0" layoutY="121.0" mnemonicParsing="false" onAction="#onClearClick" prefHeight="27.0" prefWidth="110.0" styleClass="button1" stylesheets="@../../css/styles.css" text="Очистить" textFill="WHITE" />
-      <Button fx:id="applyFilter" layoutX="903.0" layoutY="84.0" mnemonicParsing="false" onAction="#onApplyClick" prefHeight="27.0" prefWidth="110.0" styleClass="button1" stylesheets="@../../css/styles.css" text="Применить" textFill="WHITE" />
+      <Button fx:id="clearFilter" layoutX="824.0" layoutY="103.0" mnemonicParsing="false" onAction="#onClearClick" prefHeight="27.0" prefWidth="195.0" styleClass="button1" stylesheets="@../../css/styles.css" text="Очистить" textFill="WHITE" />
+      <Button fx:id="applyFilter" layoutX="824.0" layoutY="50.0" mnemonicParsing="false" onAction="#onApplyClick" prefHeight="27.0" prefWidth="195.0" styleClass="button1" stylesheets="@../../css/styles.css" text="Применить" textFill="WHITE" />
       <TableView fx:id="table" layoutX="13.0" layoutY="202.0" prefHeight="309.0" prefWidth="1007.0" style="-fx-border-color: dimgrey;">
         <columns>
             <TableColumn fx:id="microDistrictColumn" prefWidth="145.0" text="Микрорайон" />

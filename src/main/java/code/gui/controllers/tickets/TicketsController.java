@@ -134,12 +134,8 @@ public class TicketsController implements IController, Initializable{
         getData();
     }
 
-    public void onAndClick(ActionEvent event) {
+    public void onAndParameterClick(ActionEvent event) {
         addNewFilter(Condition.AND);
-    }
-
-    public void onOrClick(ActionEvent event) {
-        addNewFilter(Condition.OR);
     }
 
     private void addNewFilter(Condition condition){
@@ -154,13 +150,13 @@ public class TicketsController implements IController, Initializable{
 
         if(filterString.length() == 0) {
             if(operationCombo.getSelectionModel().getSelectedItem() != FilterOperations.LIKE)
-                filterString += String.format("%s %s '%s' ", field, operation, value.toUpperCase());
-            else filterString += String.format("%s %s '%%%s%%' ", field, operation, value.toUpperCase());
+                filterString += String.format("%s %s '%s' ", field, operation, firstUpperCase(value));
+            else filterString += String.format("%s %s '%%%s%%' ", field, operation, firstUpperCase(value));
         }
         else {
             if(operationCombo.getSelectionModel().getSelectedItem() != FilterOperations.LIKE)
-                filterString += String.format("%s %s %s '%s' ", condition.getSqlCondition(), field, operation, value.toUpperCase());
-            else filterString += String.format("%s %s %s '%%%s%%' ", condition.getSqlCondition(), field, operation, value.toUpperCase());
+                filterString += String.format("%s %s %s '%s' ", condition.getSqlCondition(), field, operation, firstUpperCase(value));
+            else filterString += String.format("%s %s %s '%%%s%%' ", condition.getSqlCondition(), field, operation, firstUpperCase(value));
         }
         if(filterArea.getText().length() == 0)
             filterArea.setText(String.format("'%s' %s '%s'",
@@ -213,6 +209,12 @@ public class TicketsController implements IController, Initializable{
             getData(filterString);
         });
         return toolBar;
+    }
+
+
+    public String firstUpperCase(String word){
+        if(word == null || word.isEmpty()) return "";
+        return word.substring(0, 1).toUpperCase() + word.substring(1);
     }
 
     @FXML
