@@ -45,6 +45,7 @@ public class TicketsController implements IController, Initializable{
 
     private ObservableList<TicketsVEntity> ticketsData = FXCollections.observableArrayList();
     private Stage popUpStage;
+    private TicketsVEntity ticket;
 
     private String filterString = "";
 
@@ -102,6 +103,17 @@ public class TicketsController implements IController, Initializable{
         ticketsData.addAll(list);
         session.close();
     }
+
+
+    private void getDataFrom(){
+        Session session = HibernateSessionFactory.getSession();
+        List<TicketsVEntity> list = session.createQuery("from TicketsVEntity where id=:id", TicketsVEntity.class).setParameter("id",ticket.getId())
+                .getResultList();
+        ticketsData.clear();
+        ticketsData.addAll(list);
+        session.close();
+    }
+
     private void configFilters(){
         fieldCombo.setItems(FXCollections.observableArrayList(FilteredColumn.values()));
         operationCombo.setItems(FXCollections.observableArrayList(FilterOperations.values()));
@@ -211,10 +223,17 @@ public class TicketsController implements IController, Initializable{
         return toolBar;
     }
 
-
-    public String firstUpperCase(String word){
+    private String firstUpperCase(String word){
         if(word == null || word.isEmpty()) return "";
         return word.substring(0, 1).toUpperCase() + word.substring(1);
+    }
+
+    public void setTicket(TicketsVEntity ticket) {
+        this.ticket = ticket;
+        String filedText = String.format("'%s' %s '%s' + '%s' %s '%s' + '%s' %s '%s'","Микрорайон","содержит",ticket.getMicroDistrict(),"Адрес","содержит",ticket.getAddress(),
+                "Статус","содержит",ticket.getStatusName());
+        filterArea.setText(filedText);
+        getDataFrom();
     }
 
     @FXML

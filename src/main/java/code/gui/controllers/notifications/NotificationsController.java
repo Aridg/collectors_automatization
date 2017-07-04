@@ -3,6 +3,8 @@ package code.gui.controllers.notifications;
 import code.expandings.GuiForm;
 import code.gui.controllers.IController;
 import code.gui.controllers.tickets.InformationAboutTicketController;
+import code.gui.controllers.tickets.TicketsController;
+import code.helper.TreeViewHelper;
 import code.hibernate.HibernateSessionFactory;
 import code.hibernate.StatusesEntity;
 import code.hibernate.TicketsVEntity;
@@ -10,6 +12,8 @@ import javafx.event.ActionEvent;
 import javafx.scene.Scene;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.TreeView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import org.hibernate.Session;
@@ -24,7 +28,8 @@ import java.util.List;
 public class NotificationsController implements IController {
 
     public DatePicker datePicker;
-    public ListView<NotificationModel> list;
+    public TreeView<NotificationModel> treeView;
+
 
     private Stage popUpStage;
 
@@ -33,12 +38,12 @@ public class NotificationsController implements IController {
         LocalDate initDate = LocalDate.now();
         initDate = initDate.plusDays(2);
         datePicker.setValue(initDate);
-        list.setOnMouseClicked(event -> {
+        treeView.setOnMouseClicked(event -> {
             if (event.getClickCount() >= 2){
-                TicketsVEntity ticket = list.getSelectionModel().getSelectedItem().getTicket();
-                GuiForm<AnchorPane, InformationAboutTicketController> form = new GuiForm<>(new String[]{"tickets", "InformationAboutTicket.fxml"});
+                TicketsVEntity ticket = treeView.getSelectionModel().getSelectedItem().getValue().getTicket();
+                GuiForm<AnchorPane, TicketsController> form = new GuiForm<>(new String[]{"tickets", "Tickets.fxml"});
                 AnchorPane parent = form.getParent();
-                InformationAboutTicketController controller = form.getController();
+                TicketsController controller = form.getController();
                 controller.setTicket(ticket);
                 Scene scene = new Scene(parent);
                 popUpStage.setScene(scene);
@@ -56,6 +61,7 @@ public class NotificationsController implements IController {
 
     private void getData() {
         Session session = HibernateSessionFactory.getSession();
+        ArrayList<TreeItem> itemArrayList = new ArrayList<>();
         List<NotificationModel> models = new ArrayList<>();
         session.createQuery("from TicketsVEntity t " +
                 "left join StatusesEntity s on t.statusId = s.id " +
@@ -67,10 +73,12 @@ public class NotificationsController implements IController {
                         models.add(new NotificationModel((TicketsVEntity) objects[0], ((StatusesEntity) objects[1]).getNotificationText()))
                 );
         session.close();
-        list.getItems().clear();
-        list.getItems().addAll(models);
-    }
 
+        TreeViewHelper helper = new TreeViewHelper();
+        TreeItem rootItem = new TreeItem("Статусы");
+        rootItem.getChildren().addAll(helper.getContent(models));
+        treeView.setRoot(rootItem);
+    }
     public void onDateChange(ActionEvent event) {
         getData();
     }
