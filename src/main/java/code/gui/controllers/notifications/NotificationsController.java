@@ -10,10 +10,7 @@ import code.hibernate.StatusesEntity;
 import code.hibernate.TicketsVEntity;
 import javafx.event.ActionEvent;
 import javafx.scene.Scene;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TreeItem;
-import javafx.scene.control.TreeView;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import org.hibernate.Session;
@@ -39,16 +36,20 @@ public class NotificationsController implements IController {
         initDate = initDate.plusDays(2);
         datePicker.setValue(initDate);
         treeView.setOnMouseClicked(event -> {
-            if (event.getClickCount() >= 2){
-                TicketsVEntity ticket = treeView.getSelectionModel().getSelectedItem().getValue().getTicket();
-                GuiForm<AnchorPane, TicketsController> form = new GuiForm<>(new String[]{"tickets", "Tickets.fxml"});
-                AnchorPane parent = form.getParent();
-                TicketsController controller = form.getController();
-                controller.setTicket(ticket);
-                Scene scene = new Scene(parent);
-                popUpStage.setScene(scene);
-                popUpStage.showAndWait();
-                getData();
+            if (event.getClickCount() >= 2) {
+                try {
+                    TicketsVEntity ticket = treeView.getSelectionModel().getSelectedItem().getValue().getTicket();
+                    GuiForm<AnchorPane, TicketsController> form = new GuiForm<>(new String[]{"tickets", "Tickets.fxml"});
+                    AnchorPane parent = form.getParent();
+                    TicketsController controller = form.getController();
+                    controller.setTicket(ticket);
+                    Scene scene = new Scene(parent);
+                    popUpStage.setScene(scene);
+                    popUpStage.showAndWait();
+                }
+                catch (Exception e){
+                    new Alert(Alert.AlertType.WARNING,"Двойной клик срабатывает только при нажатии на элемент дерева").showAndWait();
+                }
             }
         });
         getData();

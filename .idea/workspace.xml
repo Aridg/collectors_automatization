@@ -119,8 +119,8 @@
       <file leaf-file-name="NotificationsController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/code/gui/controllers/notifications/NotificationsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+            <state relative-caret-position="423">
+              <caret line="54" column="18" lean-forward="false" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -250,8 +250,8 @@
         <option value="$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.2.10.Final/hibernate-core-5.2.10.Final.jar!/org/hibernate/internal/SessionFactoryImpl.class" />
         <option value="$PROJECT_DIR$/src/main/java/code/gui/controllers/tickets/Condition.java" />
         <option value="$PROJECT_DIR$/src/main/java/code/helper/TreeViewHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/code/gui/controllers/notifications/NotificationsController.java" />
         <option value="$PROJECT_DIR$/src/main/java/code/gui/controllers/tickets/TicketsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/code/gui/controllers/notifications/NotificationsController.java" />
       </list>
     </option>
   </component>
@@ -1067,12 +1067,12 @@
       <workItem from="1499095624039" duration="131000" />
       <workItem from="1499095796906" duration="81000" />
       <workItem from="1499095951571" duration="9027000" />
-      <workItem from="1499171185328" duration="11817000" />
+      <workItem from="1499171185328" duration="12179000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="232951000" />
+    <option name="totallyTimeSpent" value="233313000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1084,7 +1084,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1587,8 +1587,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/code/gui/controllers/notifications/NotificationsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        <state relative-caret-position="423">
+          <caret line="54" column="18" lean-forward="false" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
           <folding />
         </state>
       </provider>
